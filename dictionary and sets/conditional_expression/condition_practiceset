@@ -1,0 +1,76 @@
+# a1=int(input("enter number a1: "))
+# a2=int(input("enter number a2: "))
+# a3=int(input("enter number a3: "))
+# a4=int(input("enter number a4: "))
+# if(a1>a2 and a1>a3 and a1>a4): #for finding greatest of 4 numbers 
+#     print("greatest number is a1:",a1)
+# elif(a2>a1 and a2>a3 and a2>a4):
+#     print("greatest number is a2:",a2)
+# elif(a3>a2 and a3>a1 and a3>a4):
+#     print("greatest number is a3:",a3) 
+# else:
+#     print("greatest number is a4:",a4)    
+
+
+# m1=int(input("enter marks of subject 1: "))
+# m2=int(input("enter marks of subject 2: "))
+# m3=int(input("enter marks of subject 3: "))
+
+# percentageoverall=((m1+m2+m3)*100)/300 #use if both conditions together with an and
+# if(percentageoverall>=40 and m1>=33 and m2>=33 and m3>=33):
+#     print("pass with percentage: ",percentageoverall)
+
+# else:
+#     print("fail: ",percentageoverall)        
+
+
+# p1="buy this"
+# p2="click this"
+# p3="urgent"
+# p4="gifted"
+
+# message=input("enter phrase: ")    #usage of in 
+# if((p1 in message) or (p2 in message) or (p3 in message) or (p4 in message)):
+#     print("this is a spam")
+
+# else:
+#     print("not a spam")    
+
+
+# user=input("enter username: ")
+# if(len(user)<10):             #remember length function 
+#     print("username contains lesss than 10 characters")
+
+# else:
+#     print("its ok!")   
+
+
+# a=["tannu","kirti","tanuj","mohit"]
+# name=input("enter name: ")
+# if(name in a):               #to find whether your name is there in list or not
+#     print("name is present in the list ")
+
+# else:
+    # print("name is not there in the list")
+        
+
+# marks=int(input("enter your marks: ")) #for finding the grade of marks
+# if(marks>90 and marks<=100):
+#     print("your grade is Excellent")
+# elif(marks>80 and marks<=90):
+#     print("grade is A")
+# elif(marks>70 and marks<=80):
+#     print("your grade is B") 
+# elif(marks>60 and marks<=70):
+#     print("your grade is C") 
+# elif(marks>=50 and marks<=60):
+#     print("your grade is D")         
+# elif(marks<50):
+#     print("your grade is F") 
+
+
+post=input("enter your post: ")
+if("Harry".lower() in post.lower()):
+    print("post is talking about harry")
+else:
+    print("post is not talking about harry")    

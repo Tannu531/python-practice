@@ -1,37 +1,42 @@
 print("MENU")
-print("1.Add expense")
-print("2.View expenses")
-print("3.Category wise total")
-print("4.EXIT")
-Option1="Add expense"
-Option2="View expenses"
-Option3="Category wise total"
-Option4="EXIT"
 
-
-
-
-d={"amount" : int(input("Amount")),
-   "category" : input("category"),
-   "note" : input("note") ,
-   "Date" : int(input("Date-month-year")) }
-
-Expenses=[]
-L=(input("enter new expense: "))
-Expenses.append(L)
+1="Add expense"
+print(1)
+2="View expenses"
+print(2)
+3="Category wise total"
+print(3)
+4="EXIT"
+print(4)
 
 n=input("Enter user choice: ")
-
-if("user chooses Option1"):
-    print(int(input("add expense")))
-elif("user chooses option2"):
-    a=Date|category|amount|note    
+o=n
+if(o==1):
+    a=int(input("add expense"))
+    Expenses=[]
+    L=(input("enter new expense: "))
+    Expenses.append(L)
+    d={"amount" : int(input("Amount")),
+   "category" : input("category"),
+   "note" : input("note") ,
+   "Date" : input("Date") }
     print(a)
-elif("user chooses option3"):
-    b=int(input(f"amount spend on {note}"))
+
+elif(o==2):
+    t="Date","category","amount","note"    
+    print(t)
+    
+elif(o==3):
+    b=int(input(f"amount spend on {"note"}"))
     print(b)
-else:
+elif(o==4):
     print("EXIT")        
+
+
+
+
+
+    
 
 
 

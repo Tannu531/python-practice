@@ -56,7 +56,13 @@ Files:
 - lists and tuples.py  
 - tuples.py  
 - dictionary and sets  
-- practiceset.py  
+- practiceset.py
+  
+
+  **Expense Tracker (Python CLI)**  
+  A beginner-level Python project built to practice lists, dictionaries, loops, and conditional logic.  
+  Learned how to store multiple records using a list of dictionaries and compute category-wise totals.
+
 
 
 ## Goal

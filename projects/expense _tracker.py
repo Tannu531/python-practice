@@ -46,7 +46,7 @@ while True:
 
    
  elif(n==4):
-    print("EXIT ,Thanks!")  
+    print("EXIT")  
     break      
  else:
    print("invalid choice enter choice 1-4")

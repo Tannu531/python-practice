@@ -1,42 +1,70 @@
 import webbrowser
-import pyttsx3
-object=pyttsx3.init()
-object.say("hello, how can i help you ")
-object.runAndWait()
+import datetime   
+
 while(True):
  n=input("enter your command: ").lower()
  if("exit" in n or "stop"in n or "bye" in n):
-    object.say("goodbye")
-    object.runAndWait()
+    print("bye bye! will meet next time")
+    
     break
+ elif("hi" in n or "hello" in n or "hey" in n):
+    print("hello! how may i help you")
+    
  elif("youtube" in n):
-    object.say("opening youtube")
-    object.runAndWait()
+    print("opening youtube")
+    
     webbrowser.open("https://www.youtube.com")
     
  elif("google" in n):
-    object.say("opening google")
-    object.runAndWait()
+    print("opening google")
+
     webbrowser.open("https://www.google.com")  
  elif("whatsapp" in n):
-    object.say("opening whatsapp")   
-    object.runAndWait()
+    print("opening whatsapp")
+    
     webbrowser.open("https://web.whatsapp.com")
  elif("github" in n):
-    object.say("opening github")   
-    object.runAndWait()
+    print("opening github")
+   
     webbrowser.open("https://github.com")   
  elif("spotify" in n):
-    object.say("opening spotify")   
-    object.runAndWait()
+    print("opening spotify")
+    
     webbrowser.open("https://open.spotify.com")   
  elif("instagram" in n):
-    object.say("opening instagram")   
-    object.runAndWait()
+    print("opening instagram")
+
     webbrowser.open("https://www.instagram.com")  
  elif("time" in n):
-    pass
-              
-   
+    
+    current=datetime.datetime.now()
+    hour=current.hour
+    minute=current.minute
+    
+    if(hour>12):
+       hour=hour-12
+       
+      
+    print(f"The current time is {hour}:{minute:02d} ")
+ elif("calculator" in n):
+    n2=input("enter operation: ")
+    if(n2=="addition"):
+       number1=int(input("first number: "))
+       number2=int(input("second number: "))
+       addition=number1+number2
+       print(addition)
+    elif(n2=="subtraction"):
+       number1=int(input("first number: "))
+       number2=int(input("second number: "))
+       subtraction=number1-number2
+       print(subtraction)
+       
+
+ elif("help" in n):
+    print("available commands are:\n youtube\n time\n google\n calculator\n exit\n")
+        
+         
+     
  else:
-    object.say("i dont understand")    
+    print("i dont understand")
+      

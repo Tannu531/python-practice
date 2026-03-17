@@ -1,11 +1,5 @@
 import webbrowser
 import datetime   
-
-def exit():
- if("exit" in n or "bye" in n ):
-   print("bye bye !see you soon ")
-   break
-
 def youtube():   
    
    print("opening youtube")
@@ -37,29 +31,46 @@ def instagram():
 
 def time():
    
-    current=datetime.datetime.now()
-    hour=current.hour
-    minute=current.minute
+   current=datetime.datetime.now()
+   hour=current.hour
+   minute=current.minute
     
-    if(hour>12):
-       hour=hour-12
-       
-      
-    print(f"The current time is {hour}:{minute:02d} ")
+   if(hour>12):
+      hour=hour-12
+      print(f"The current time is {hour}:{minute:02d}PM")
+   elif(hour==12):
+      print("the current time is 12:00 PM")   
+   elif(hour==0):
+      print("the currect time is 0:00 AM")  
+    
+   else: 
+         
+     print(f"The current time is {hour}:{minute:02d}AM ")
 def calculator():
-   if("calculator" in n):
-      n2=input("enter operation: ")
-      if(n2=="addition"):
-       number1=int(input("first number: "))
-       number2=int(input("second number: "))
-       addition=number1+number2
-       print(addition)
-      elif(n2=="subtraction"):
-       number1=int(input("first number: "))
-       number2=int(input("second number: "))
-       subtraction=number1-number2
-       print(subtraction)
-       
+   
+   n2=input("enter operation: ").lower()
+   if(n2=="addition"):
+      number1=int(input("first number: "))
+      number2=int(input("second number: "))
+      addition=number1+number2
+      print(addition)
+   elif(n2=="subtraction"):
+      number1=int(input("first number: "))
+      number2=int(input("second number: "))
+      subtraction=number1-number2
+      print(subtraction)
+   elif(n2=="multiplication"):
+      number1=int(input("enter first number: "))
+      number2=int(input("enter second number: "))   
+      multiplication=number1*number2
+      print(multiplication)
+   elif(n2=="division"):
+      number1=int(input("enter first number: "))
+      number2=int(input("enter second number: "))   
+      division=number1/number2
+      print(division)   
+   else:
+      print("enter valid operation")      
 
 def showhelp():
     print("available commands are:\n youtube\n time\n google\n calculator\n exit\n")
@@ -70,22 +81,25 @@ while(True):
  
  if("hi" in n or "hello" in n or "hey" in n):
      print("hello! how may i help you")
- if("youtube" in n):
+ elif("exit" in n or "bye" in n):
+    break
+ elif("youtube" in n):
     youtube()
- if("google" in n):
+ elif("google" in n):
     google()
- if("whatsapp" in n):
+ elif("whatsapp" in n):
     whatsapp()
- if("spotify" in n):
+ elif("spotify" in n):
     spotify()
- if("github" in n):
+ elif("github" in n):
     github()
- if("instagram" in n):
+ elif("instagram" in n):
     instagram()
- if("calculator" in n):
+ elif("calculator" in n):
     calculator()
- if("time" in n):
+ elif("time" in n):
     time()
- if("help" in n):
-    help()                     
-
+ elif("help" in n):
+    showhelp()                     
+ else:
+    print("not valid input")

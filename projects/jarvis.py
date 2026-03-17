@@ -70,7 +70,7 @@ def calculator():
       division=number1/number2
       print(division)   
    else:
-      print("enter valid operation")      
+      print(" invalid operation")      
 
 def showhelp():
     print("available commands are:\n youtube\n time\n google\n calculator\n exit\n")

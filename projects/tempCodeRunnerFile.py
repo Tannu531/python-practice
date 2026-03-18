@@ -97,7 +97,7 @@ while(True):
  elif("exit" in n or "bye" in n):
     print("bye bye ! see you soon")
     break
- elif(dict in n):
+ elif(n in dict):
     dict[n]()
  else:
    print("invalid input")   

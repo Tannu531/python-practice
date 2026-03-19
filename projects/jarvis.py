@@ -37,7 +37,7 @@ def time():
     
    if(hour>12):
       hour=hour-12
-      print(f"The current time is {hour}:{minute:02d}PM")
+      print(f"The current time is {hour}:{minute:02d} PM")
    elif(hour==12):
       print("the current time is 12:00 PM")   
    elif(hour==0):
@@ -45,35 +45,36 @@ def time():
     
    else: 
          
-     print(f"The current time is {hour}:{minute:02d}AM ")
+     print(f"The current time is {hour}:{minute:02d}  AM ")
 def calculator():
    
    n2=input("enter operation: ").lower()
-   if(n2=="addition"):
+   if(n2=="addition" or n2=="add" or n2=="+"):
       number1=int(input("first number: "))
       number2=int(input("second number: "))
       addition=number1+number2
       print(addition)
-   elif(n2=="subtraction"):
-      number1=int(input("first number: "))
-      number2=int(input("second number: "))
-      subtraction=number1-number2
-      print(subtraction)
-   elif(n2=="multiplication"):
+   elif(n2=="subtraction" or n2=="minus" or n2=="-"):
+    number1=int(input("first number: "))
+    number2=int(input("second number: "))
+    subtraction=number1-number2
+    print(subtraction)
+   elif(n2=="multiplication" or n2=="multiply" or n2=="*"):
       number1=int(input("enter first number: "))
       number2=int(input("enter second number: "))   
       multiplication=number1*number2
       print(multiplication)
-   elif(n2=="division"):
-      number1=int(input("enter first number: "))
-      number2=int(input("enter second number: ")) 
-      if(number2==0):
-         print("infinity")    
+   elif(n2=="division" or n2=="divide" or n2=="/"):
+    number1=int(input("enter first number: "))
+    number2=int(input("enter second number: ")) 
+    if(number2==0):
+      print("infinity")
       division=number1/number2
       print(division) 
+
      
    else:
-      print("enter valid operation")      
+      print("enter valid operation")  
 
 def showhelp():
     print("available commands are:\n youtube\n time\n google\n calculator\n exit\n")
@@ -90,15 +91,18 @@ dict={
  }    
           
 while(True):
- 
  n=input("enter your command: ").lower()
  if("hi" in n or "hello" in n or "hey" in n):
      print("hello! how may i help you")
+     continue
  elif("exit" in n or "bye" in n):
     print("bye bye ! see you soon")
     break
- elif(dict in n):
-    dict[n]()
+ for key in dict: 
+    if(key in n):
+       dict[key]()
+       break
+ 
  else:
    print("invalid input")   
  

@@ -1,7 +1,6 @@
 import webbrowser
 import datetime   
 def youtube():   
-   
    print("opening youtube")
    webbrowser.open("https://www.youtube.com")
        
@@ -13,39 +12,31 @@ def whatsapp():
    print("opening whatsapp")
    webbrowser.open("https://web.whatsapp.com")
 
-
 def github():
    print("opening github")
    webbrowser.open("https://github.com")   
-
 
 def spotify():
    print("opening spotify")
    webbrowser.open("https://open.spotify.com")   
 
-
 def instagram():
    print("opening instagram")
    webbrowser.open("https://www.instagram.com")  
 
-
 def time():
-   
    current=datetime.datetime.now()
    hour=current.hour
    minute=current.minute
-    
-   if(hour>12):
-      hour=hour-12
+   if(hour>=12):
       print(f"The current time is {hour}:{minute:02d} PM")
-   elif(hour==12):
-      print("the current time is 12:00 PM")   
-   elif(hour==0):
-      print("the currect time is 0:00 AM")  
-    
-   else: 
+   elif(hour<12):
+      print(f"The current time is {hour}:{minute:02d}  AM ")
+   elif(hour%12==0):
+      hour=hour+12
+       
+   
          
-     print(f"The current time is {hour}:{minute:02d}  AM ")
 def calculator():
    print("Available operations are:\n Addition\n Subtraction\n Multiplication\n Division\n")
    print("Type exit to go back")
@@ -54,55 +45,35 @@ def calculator():
     n2=input("enter operation: ").lower()
     if(n2=="exit"):
        break  
-    elif(n2=="addition" or n2=="add" or n2=="+"):
-       try:
-        number1=int(input("first number: ")) 
-        number2=int(input("second number: "))
-        addition=number1+number2
-        print(addition)
-       except:
-          print("not correct integer,please retry!")
-          continue
-    elif(n2=="subtraction" or n2=="minus" or n2=="-"):
-     try:
-      number1=int(input("first number: "))
+    
+    try:
+      number1=int(input("first number: ")) 
       number2=int(input("second number: "))
-      subtraction=number1-number2
-      print(subtraction)
-     except:
-         print("not correct integer,please retry!")
-         continue
-    elif(n2=="multiplication" or n2=="multiply" or n2=="*"):
-      try:
-       number1=int(input("enter first number: "))
-       number2=int(input("enter second number: "))   
+    except:
+      if(ValueError):
+       print("not correct integer,please retry!")
+       continue
+    if(n2=="addition" or n2=="add" or n2=="+"):
+       addition=number1+number2
+       print(f"Result is {addition}")
+    elif(n2=="subtraction"or n2=="minus" or n2=="-"):
+       subtraction=number1-number2
+       print(f"Result is {subtraction}")  
+    elif(n2=="multiplication"or n2=="multiply" or n2=="*"):
        multiplication=number1*number2
-       print(multiplication)
-      except:
-          print("not correct integer,please retry!")
-          continue
+       print(f"Result is {multiplication}")
     elif(n2=="division" or n2=="divide" or n2=="/"):
-      try:
-       number1=int(input("enter first number: "))
-       number2=int(input("enter second number: ")) 
-       if(number2==0):
-        print("Denominator is 0 so the answer is infinity .")
+      if(number2==0):
+        print("cannot divide by 0")
         continue
-       else:
+      else:
           division=number1/number2
-          print(division) 
-      
-      except:
-          print("not correct integer,please retry!")
-          continue
-      
-
+          print(f"Result is {division}")   
     else:
-      print("enter valid operation")  
-   
+       print("Enter valid operation")  
 
 def showhelp():
-    print("available commands are:\n youtube\n time\n google\n calculator\n exit\n")
+    print("available commands are:\n youtube\n whatsapp\n github\n spotify\n instagram\n time\n google\n calculator\n exit\n")
 dict={
     "youtube" :youtube,
     "yt":youtube,
@@ -130,7 +101,6 @@ while(True):
     if(key in n):
        dict[key]()
        break
- 
  else:
    print("invalid input")   
  

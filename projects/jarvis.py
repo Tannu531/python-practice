@@ -47,45 +47,73 @@ def time():
          
      print(f"The current time is {hour}:{minute:02d}  AM ")
 def calculator():
-   
-   n2=input("enter operation: ").lower()
-   if(n2=="addition" or n2=="add" or n2=="+"):
+   print("Available operations are:\n Addition\n Subtraction\n Multiplication\n Division\n")
+   print("Type exit to go back")
+   while(True):
+    
+    n2=input("enter operation: ").lower()
+    if(n2=="exit"):
+       break  
+    elif(n2=="addition" or n2=="add" or n2=="+"):
+       try:
+        number1=int(input("first number: ")) 
+        number2=int(input("second number: "))
+        addition=number1+number2
+        print(addition)
+       except:
+          print("not correct integer,please retry!")
+          continue
+    elif(n2=="subtraction" or n2=="minus" or n2=="-"):
+     try:
       number1=int(input("first number: "))
       number2=int(input("second number: "))
-      addition=number1+number2
-      print(addition)
-   elif(n2=="subtraction" or n2=="minus" or n2=="-"):
-    number1=int(input("first number: "))
-    number2=int(input("second number: "))
-    subtraction=number1-number2
-    print(subtraction)
-   elif(n2=="multiplication" or n2=="multiply" or n2=="*"):
-      number1=int(input("enter first number: "))
-      number2=int(input("enter second number: "))   
-      multiplication=number1*number2
-      print(multiplication)
-   elif(n2=="division" or n2=="divide" or n2=="/"):
-    number1=int(input("enter first number: "))
-    number2=int(input("enter second number: ")) 
-    if(number2==0):
-      print("infinity")
-      division=number1/number2
-      print(division) 
+      subtraction=number1-number2
+      print(subtraction)
+     except:
+         print("not correct integer,please retry!")
+         continue
+    elif(n2=="multiplication" or n2=="multiply" or n2=="*"):
+      try:
+       number1=int(input("enter first number: "))
+       number2=int(input("enter second number: "))   
+       multiplication=number1*number2
+       print(multiplication)
+      except:
+          print("not correct integer,please retry!")
+          continue
+    elif(n2=="division" or n2=="divide" or n2=="/"):
+      try:
+       number1=int(input("enter first number: "))
+       number2=int(input("enter second number: ")) 
+       if(number2==0):
+        print("Denominator is 0 so the answer is infinity .")
+        continue
+       else:
+          division=number1/number2
+          print(division) 
+      
+      except:
+          print("not correct integer,please retry!")
+          continue
+      
 
-     
-   else:
+    else:
       print("enter valid operation")  
+   
 
 def showhelp():
     print("available commands are:\n youtube\n time\n google\n calculator\n exit\n")
 dict={
     "youtube" :youtube,
+    "yt":youtube,
     "google" :google,
     "whatsapp":whatsapp,
     "spotify":spotify,
     "github":github,
     "instagram":instagram,
+    "insta":instagram,
     "calculator":calculator,
+    "calculate":calculator,
     "time":time,
     "help":showhelp
  }    

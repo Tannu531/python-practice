@@ -1,27 +1,27 @@
 import webbrowser
 import datetime   
 def youtube():   
-   print("opening youtube")
+   print("yaa sure,opening youtube")
    webbrowser.open("https://www.youtube.com")
        
 def google():
-   print("opening google")
+   print("yaa sure,opening google")
    webbrowser.open("https://www.google.com")  
 
 def whatsapp():
-   print("opening whatsapp")
+   print("yaa sure,opening whatsapp")
    webbrowser.open("https://web.whatsapp.com")
 
 def github():
-   print("opening github")
+   print("yaa sure,opening github")
    webbrowser.open("https://github.com")   
 
 def spotify():
-   print("opening spotify")
+   print("yaa sure,opening spotify")
    webbrowser.open("https://open.spotify.com")   
 
 def instagram():
-   print("opening instagram")
+   print("yaa sure,opening instagram")
    webbrowser.open("https://www.instagram.com")  
 
 def time():
@@ -29,11 +29,15 @@ def time():
    hour=current.hour
    minute=current.minute
    if(hour>=12):
-      print(f"The current time is {hour}:{minute:02d} PM")
+      a="PM"
    elif(hour<12):
-      print(f"The current time is {hour}:{minute:02d}  AM ")
-   elif(hour%12==0):
-      hour=hour+12
+      a="AM"
+   if(hour%12==0):
+      hour=12
+   elif(hour%12!=0):
+      hour=hour%12   
+
+   print(f"The current time is {hour}:{minute:02d} {a}")      
        
    
          
@@ -94,15 +98,28 @@ while(True):
  if("hi" in n or "hello" in n or "hey" in n):
      print("hello! how may i help you")
      continue
+ elif("kaise ho" in n or "how are you" in n or "suna" in n):
+    print("m bdiya ,tu suna kya haal chaal")
+    continue
  elif("exit" in n or "bye" in n):
-    print("bye bye ! see you soon")
+    print("Chlo bye fir koi help chahiye ho to btana ")
     break
+ 
  for key in dict: 
+    list=[]
+    key=0
+    keyf=key+1
+    Finallist=list.append(keyf)
+ if(Finallist!=0 or Finallist!=1):
+    print("Please tell me which command do you want exactly ?")
     if(key in n):
        dict[key]()
        break
- else:
-   print("invalid input")   
  
+# else:
+#    print("invalid input")
+ 
+   
+
  
        

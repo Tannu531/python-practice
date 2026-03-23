@@ -77,7 +77,13 @@ def calculator():
        print("Enter valid operation")  
 
 def showhelp():
-    print("available commands are:\n youtube\n whatsapp\n github\n spotify\n instagram\n time\n google\n calculator\n exit\n")
+    print("available commands are:\n youtube:opens youtube\n whatsapp:opens whatsapp\n github:opens github\n spotify:open spotify \n instagram:opens insta\n time:tells current time\n google:google will be opened \n calculator:you can use calculator\n exit:type it for exit\n notessaver:for writing notes")
+def notessaver():
+   note=input("Write your notes: ")    
+   st=note
+   f=open("yournotes.txt","w")
+   f.write(st)
+   f.close()
 dict={
     "youtube" :youtube,
     "yt":youtube,
@@ -90,7 +96,8 @@ dict={
     "calculator":calculator,
     "calculate":calculator,
     "time":time,
-    "help":showhelp
+    "help":showhelp,
+    "notes":notessaver
  }    
           
 while(True):
@@ -106,18 +113,13 @@ while(True):
     break
  
  for key in dict: 
-    list=[]
-    key=0
-    keyf=key+1
-    Finallist=list.append(keyf)
- if(Finallist!=0 or Finallist!=1):
-    print("Please tell me which command do you want exactly ?")
     if(key in n):
        dict[key]()
        break
  
-# else:
-#    print("invalid input")
+ else:
+   print("your input does not match with our commands, Below is the guide for commands")
+   showhelp()
  
    
 

@@ -5,23 +5,23 @@ def youtube():
    webbrowser.open("https://www.youtube.com")
        
 def google():
-   print("yaa sure,opening google")
+   print("opening google")
    webbrowser.open("https://www.google.com")  
 
 def whatsapp():
-   print("yaa sure,opening whatsapp")
+   print("opening whatsapp")
    webbrowser.open("https://web.whatsapp.com")
 
 def github():
-   print("yaa sure,opening github")
+   print("opening github")
    webbrowser.open("https://github.com")   
 
 def spotify():
-   print("yaa sure,opening spotify")
+   print("spotify is here!Listen to your fav music")
    webbrowser.open("https://open.spotify.com")   
 
 def instagram():
-   print("yaa sure,opening instagram")
+   print("opening instagram")
    webbrowser.open("https://www.instagram.com")  
 
 def time():
@@ -81,7 +81,7 @@ def showhelp():
 def notessaver():
    note=input("Write your notes: ")    
    st=note
-   f=open("yournotes.txt","w")
+   f=open("yournotes.txt","a")
    f.write(st)
    f.close()
 dict={
@@ -118,6 +118,7 @@ while(True):
        break
  
  else:
+   print("It looks like you are writing something wrong !")
    print("your input does not match with our commands, Below is the guide for commands")
    showhelp()
  

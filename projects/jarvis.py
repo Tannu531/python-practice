@@ -2,28 +2,22 @@ import webbrowser
 import datetime   
 def youtube():   
    print("yaa sure,opening youtube")
-   webbrowser.open("https://www.youtube.com")
-       
+   webbrowser.open("https://www.youtube.com")       
 def google():
    print("opening google")
    webbrowser.open("https://www.google.com")  
-
 def whatsapp():
    print("opening whatsapp")
    webbrowser.open("https://web.whatsapp.com")
-
 def github():
    print("opening github")
    webbrowser.open("https://github.com")   
-
 def spotify():
    print("spotify is here!Listen to your fav music")
    webbrowser.open("https://open.spotify.com")   
-
 def instagram():
    print("opening instagram")
    webbrowser.open("https://www.instagram.com")  
-
 def time():
    current=datetime.datetime.now()
    hour=current.hour
@@ -36,11 +30,8 @@ def time():
       hour=12
    elif(hour%12!=0):
       hour=hour%12   
-
    print(f"The current time is {hour}:{minute:02d} {a}")      
-       
-   
-         
+                   
 def calculator():
    print("Available operations are:\n Addition\n Subtraction\n Multiplication\n Division\n")
    print("Type exit to go back")
@@ -48,8 +39,7 @@ def calculator():
     
     n2=input("enter operation: ").lower()
     if(n2=="exit"):
-       break  
-    
+       break      
     try:
       number1=int(input("first number: ")) 
       number2=int(input("second number: "))
@@ -75,7 +65,6 @@ def calculator():
           print(f"Result is {division}")   
     else:
        print("Enter valid operation")  
-
 def showhelp():
     print("available commands are:\n youtube:opens youtube\n whatsapp:opens whatsapp\n github:opens github\n spotify:open spotify \n instagram:opens insta\n time:tells current time\n google:google will be opened \n calculator:you can use calculator\n exit:type it for exit\n notessaver:for writing notes\n shownotes:show you the notes\n search:to search something")
 def notessaver():
@@ -105,14 +94,10 @@ dict={
     "calculate":calculator,
     "time":time,
     "help":showhelp,
-    "notes":notessaver,
     "shownotes":shownotes,
+    "notes":notessaver,
     "search":search
- }    
-      
-
-   
-          
+ }             
 while(True):
  n=input("enter your command: ").lower()
  if("hi" in n or "hello" in n or "hey" in n):
@@ -124,12 +109,10 @@ while(True):
  elif("exit" in n or "bye" in n):
     print("Bye Bye!! Have a good day ji")
     break
- 
  for key in dict: 
     if(key in n):
        dict[key]()
-       break
- 
+       break 
  else:
    print("It looks like you are writing something wrong !")
    print("your input does not match with our commands, Below is the guide for commands")

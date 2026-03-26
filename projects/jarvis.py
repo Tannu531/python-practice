@@ -77,13 +77,21 @@ def calculator():
        print("Enter valid operation")  
 
 def showhelp():
-    print("available commands are:\n youtube:opens youtube\n whatsapp:opens whatsapp\n github:opens github\n spotify:open spotify \n instagram:opens insta\n time:tells current time\n google:google will be opened \n calculator:you can use calculator\n exit:type it for exit\n notessaver:for writing notes")
+    print("available commands are:\n youtube:opens youtube\n whatsapp:opens whatsapp\n github:opens github\n spotify:open spotify \n instagram:opens insta\n time:tells current time\n google:google will be opened \n calculator:you can use calculator\n exit:type it for exit\n notessaver:for writing notes\n shownotes:show you the notes\n search:to search something")
 def notessaver():
    note=input("Write your notes: ")    
    st=note
    f=open("yournotes.txt","a")
-   f.write(st)
+   f.write(st+"\n")
    f.close()
+def shownotes():
+   f=open("yournotes.txt")
+   data=f.read()
+   print(data) 
+   f.close()
+def search():
+   S=input("Please tell us what do you want to search: ")
+   webbrowser.open(f"https://www.bing.com/search?q={S}")   
 dict={
     "youtube" :youtube,
     "yt":youtube,
@@ -97,8 +105,13 @@ dict={
     "calculate":calculator,
     "time":time,
     "help":showhelp,
-    "notes":notessaver
+    "notes":notessaver,
+    "shownotes":shownotes,
+    "search":search
  }    
+      
+
+   
           
 while(True):
  n=input("enter your command: ").lower()
@@ -109,7 +122,7 @@ while(True):
     print("m bdiya ,tu suna kya haal chaal")
     continue
  elif("exit" in n or "bye" in n):
-    print("Chlo bye fir koi help chahiye ho to btana ")
+    print("Bye Bye!! Have a good day ji")
     break
  
  for key in dict: 

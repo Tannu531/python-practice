@@ -43,8 +43,7 @@ def calculator():
     try:
       number1=int(input("first number: ")) 
       number2=int(input("second number: "))
-    except:
-      if(ValueError):
+    except(ValueError):
        print("not correct integer,please retry!")
        continue
     if(n2=="addition" or n2=="add" or n2=="+"):
@@ -101,7 +100,7 @@ dict={
 while(True):
  n=input("enter your command: ").lower()
  if("hi" in n or "hello" in n or "hey" in n):
-     print("hello! how may i help you")
+     print("hello, how may i help you")
      continue
  elif("kaise ho" in n or "how are you" in n or "suna" in n):
     print("m bdiya ,tu suna kya haal chaal")

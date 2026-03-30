@@ -100,7 +100,7 @@ dict={
 while(True):
  n=input("enter your command: ").lower()
  if("hi" in n or "hello" in n or "hey" in n):
-     print("hello, how may i help you")
+     print("hello! how may i help you")
      continue
  elif("kaise ho" in n or "how are you" in n or "suna" in n):
     print("m bdiya ,tu suna kya haal chaal")
